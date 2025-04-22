@@ -13,4 +13,5 @@ export class BookComponent {
     author : "Leonardo Boff",
     price : 50.00 
   }
+  
 }
