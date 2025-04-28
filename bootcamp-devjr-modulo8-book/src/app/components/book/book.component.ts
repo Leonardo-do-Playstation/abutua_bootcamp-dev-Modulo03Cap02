@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { book } from '../../Book'
+
 @Component({
   selector: 'app-book',
   standalone: false,
@@ -7,11 +8,14 @@ import { book } from '../../Book'
   styleUrl: './book.component.css'
 })
 export class BookComponent {
-  book : book = {
-    id : 1,
-    title : "Angular",
-    author : "Leonardo Boff",
-    price : 50.00 
-  }
-  
+   
+@Input()
+  book: book = {} as book;
+
+@Output()
+saveEventEmitter = new EventEmitter();
+
+save(){
+  this.saveEventEmitter.emit();
+ }
 }
